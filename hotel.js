@@ -1,24 +1,23 @@
-/* The script is placed inside an immediately invoked function expression
-   which helps protect the scope of variables */
+function genRand()
+{
+  var rate = Math.floor((Math.random()*300)+100);
+  return rate;
+}
 
-//PART ONE: GENERATE A RANDOM ROOM RATE. Write a function called genRand() that has no paremeters that will return a room rate between 100 and 400. HINT: You should hit a number within this range within 10 tries.
-  
+  function offerExpires(date)
+{
+  var newDate = date.setDate(date.getDate()+ 7);
+  var day =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var day2 = day [date.getDay()];
+  var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decemeber"];
+  var month2 = month [date.getMonth()];
+  return "Offer expires next" + " " + day2 + "<br>" +"(" + date.getDate() + " " + month2 + " " + date.getFullYear () + ")";
+}
 
+document.getElementById("specialRate").innerHTML = genRand();
 
-
-
-  // PART TWO: CALCULATE AND RETURN THE EXPIRY DETAILS FOR THE OFFER. Write a function called offerExpires that has one parameter a Date object. The function should return a string in the format "OFFER EXPIRES NEXT "WeekDay" (Date Month Year)". The date should be one week from today's date
-
-  
-//PART THREE: CALL THE FUNCTIONS AND WRITE INFO TO WEBPAGE
-
-//Call getRand() function to get random room rate and write it to the special rate section on the webpage
-
-
-//create a new Date object
-
-
-//Call the function passing the date object to it and write it to the offer ends section on the webpage
+var date = new Date;
 
 
+document.getElementById("offerEnds").innerHTML = offerExpires(date);
 
